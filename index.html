@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>我的 AI 工具合集</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>我的 AI 工具合集</h1>
+    <p>分类导航：点击卡片打开平台或 agent 页面。可编辑保存为书签或部署为个人站点。</p>
+    <input id="search" placeholder="搜索模型或平台（例如：Stable Diffusion, ElevenLabs）" />
+  </header>
+
+  <main>
+    <section class="grid" data-category="LLM">
+      <h2>大模型（文本 / 聊天）</h2>
+      <div class="cards" id="llm-cards">
+        <a class="card" href="https://platform.openai.com/" target="_blank" rel="noopener">OpenAI (GPT)</a>
+        <a class="card" href="https://anthropic.com/" target="_blank" rel="noopener">Anthropic (Claude)</a>
+        <a class="card" href="https://ai.meta.com/" target="_blank" rel="noopener">Meta (Llama)</a>
+        <a class="card" href="https://cloud.google.com/vertex-ai" target="_blank" rel="noopener">Google Vertex AI</a>
+        <a class="card" href="https://www.cohere.com/" target="_blank" rel="noopener">Cohere</a>
+      </div>
+    </section>
+
+    <section class="grid" data-category="Text-to-Image">
+      <h2>文生图（Text → Image）</h2>
+      <div class="cards" id="ttimage-cards">
+        <a class="card" href="https://stability.ai/" target="_blank" rel="noopener">Stability (Stable Diffusion)</a>
+        <a class="card" href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney</a>
+        <a class="card" href="https://runwayml.com/" target="_blank" rel="noopener">Runway</a>
+        <a class="card" href="https://openai.com/dall-e-2" target="_blank" rel="noopener">OpenAI DALL·E</a>
+      </div>
+    </section>
+
+    <section class="grid" data-category="Speech">
+      <h2>语音 / TTS / 语音合成</h2>
+      <div class="cards" id="speech-cards">
+        <a class="card" href="https://elevenlabs.io/" target="_blank" rel="noopener">ElevenLabs</a>
+        <a class="card" href="https://www.descript.com/overdub" target="_blank" rel="noopener">Descript Overdub</a>
+        <a class="card" href="https://cloud.google.com/text-to-speech" target="_blank" rel="noopener">Google TTS</a>
+        <a class="card" href="https://www.resemble.ai/" target="_blank" rel="noopener">Resemble.ai</a>
+      </div>
+    </section>
+
+    <section class="grid" data-category="Text-to-Video">
+      <h2>视频（Text → Video / AI 视频）</h2>
+      <div class="cards" id="video-cards">
+        <a class="card" href="https://www.synthesia.io/" target="_blank" rel="noopener">Synthesia</a>
+        <a class="card" href="https://runwayml.com/" target="_blank" rel="noopener">Runway（视频）</a>
+        <a class="card" href="https://www.tii.ae/" target="_blank" rel="noopener">Imagen Video / 实验性平台</a>
+      </div>
+    </section>
+
+    <section class="grid" data-category="Agents">
+      <h2>常用 Agent / 平台</h2>
+      <div class="cards" id="agent-cards">
+        <a class="card" href="https://github.com/features/copilot/" target="_blank" rel="noopener">GitHub Copilot</a>
+        <a class="card" href="https://openai.com/research/rlhf" target="_blank" rel="noopener">OpenAI Agents / Plugins</a>
+        <a class="card" href="https://platform.openai.com/docs/guides/gpt/function-calling" target="_blank" rel="noopener">Function-calling / Agent 集成</a>
+        <a class="card" href="https://huggingface.co/spaces" target="_blank" rel="noopener">Hugging Face Spaces (Agent / Demo)</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>可按需编辑此文件，替换或增加你常用的模型与 agent 链接。要部署至 GitHub Pages，直接把仓库推送到 GitHub 并在仓库设置中启用 Pages。</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
