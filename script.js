@@ -27,29 +27,19 @@ const io = new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 reveals.forEach(r=>io.observe(r));
 
-// 随机注入本地画廊并初始化延迟加载与交互
-const localImages = [
+// 固定注入三张指定本地图片并初始化延迟加载与交互
+const fixedImages = [
   'assets/woman1.jpg',
   'assets/woman2.jpg',
-  'assets/img1.jpg',
-  'assets/img2.jpg',
-  'assets/img3.jpg'
+  'assets/img1.jpg'
 ];
-function pickRandom(arr, n){
-  const pool = arr.slice();
-  const out = [];
-  for(let i=0;i<n && pool.length>0;i++){
-    const idx = Math.floor(Math.random()*pool.length);
-    out.push(pool.splice(idx,1)[0]);
-  }
-  return out;
-}
 function populateGallery(){
   const gallery = document.getElementById('gallery');
   if(!gallery) return;
-  const picks = pickRandom(localImages, 3);
+  const picks = fixedImages; // 固定顺序：woman1, woman2, img1
   gallery.innerHTML = picks.map((src, i) => `\n    <figure class="media-card" tabindex="0">\n      <img src="${src}" alt="示例图 ${i+1}" class="lazy">\n      <figcaption>示例图 ${i+1}</figcaption>\n    </figure>`).join('\n');
 }
+
 populateGallery();
 
 function initializeLazyImages(){
