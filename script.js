@@ -27,20 +27,51 @@ const io = new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 reveals.forEach(r=>io.observe(r));
 
-// 延迟加载图片 & 点击放大
-const lazyImages = document.querySelectorAll('img.lazy');
-lazyImages.forEach(img=>{
-  img.dataset.loaded = 'false';
-  const src = img.dataset.src;
-  const ioImg = new IntersectionObserver((ents,obs)=>{
-    ents.forEach(en=>{
-      if(en.isIntersecting){ img.src = src; img.dataset.loaded='true'; obs.unobserve(img); }
+// 随机注入本地画廊并初始化延迟加载与交互
+const localImages = [
+  'assets/woman1.jpg',
+  'assets/woman2.jpg',
+  'assets/img1.jpg',
+  'assets/img2.jpg',
+  'assets/img3.jpg'
+];
+function pickRandom(arr, n){
+  const pool = arr.slice();
+  const out = [];
+  for(let i=0;i<n && pool.length>0;i++){
+    const idx = Math.floor(Math.random()*pool.length);
+    out.push(pool.splice(idx,1)[0]);
+  }
+  return out;
+}
+function populateGallery(){
+  const gallery = document.getElementById('gallery');
+  if(!gallery) return;
+  const picks = pickRandom(localImages, 3);
+  gallery.innerHTML = picks.map((src, i) => `\n    <figure class="media-card" tabindex="0">\n      <img src="${src}" alt="示例图 ${i+1}" class="lazy">\n      <figcaption>示例图 ${i+1}</figcaption>\n    </figure>`).join('\n');
+}
+populateGallery();
+
+function initializeLazyImages(){
+  const lazyImages = document.querySelectorAll('img.lazy');
+  lazyImages.forEach(img=>{
+    img.dataset.loaded = 'false';
+    const src = img.dataset.src || img.getAttribute('src');
+    const ioImg = new IntersectionObserver((ents,obs)=>{
+      ents.forEach(en=>{
+        if(en.isIntersecting){ if(src){ img.src = src; img.dataset.loaded='true'; } obs.unobserve(img); }
+      });
     });
+    ioImg.observe(img);
+    img.addEventListener('click', ()=>openModalWithImage(img.src, img.alt));
+    img.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') openModalWithImage(img.src, img.alt); });
   });
-  ioImg.observe(img);
-  img.addEventListener('click', ()=>openModalWithImage(img.src, img.alt));
-  img.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') openModalWithImage(img.src, img.alt); });
-});
+}
+
+// 初始化新注入的图片与媒体卡焦点行为
+initializeLazyImages();
+document.querySelectorAll('.media-card').forEach(mc=> mc.addEventListener('focus', ()=> mc.scrollIntoView({behavior:'smooth',block:'center'})));
+
 
 // Modal: 显示图片或视频 iframe
 const modal = document.getElementById('modal');
