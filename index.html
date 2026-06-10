@@ -17,58 +17,49 @@
       <div class="search-wrap">
         <label for="search" class="visually-hidden">搜索模型或平台</label>
         <input id="search" placeholder="搜索（例如: Stable Diffusion, ElevenLabs）" autocomplete="off" />
+        <button id="playDemo" class="cta">播放示例视频</button>
       </div>
       <p class="meta">已部署：<a href="https://xjtsinghua.github.io/ai_hub/" target="_blank" rel="noopener">https://xjtsinghua.github.io/ai_hub/</a></p>
     </div>
   </header>
 
   <main class="container">
-    <section class="grid" data-category="LLM">
+    <section class="grid reveal" data-category="LLM">
       <h2>大模型（文本 / 聊天）</h2>
       <div class="cards" id="llm-cards">
-        <a class="card" href="https://platform.openai.com/" target="_blank" rel="noopener">OpenAI · GPT</a>
-        <a class="card" href="https://anthropic.com/" target="_blank" rel="noopener">Anthropic · Claude</a>
-        <a class="card" href="https://ai.meta.com/" target="_blank" rel="noopener">Meta · Llama</a>
-        <a class="card" href="https://cloud.google.com/vertex-ai" target="_blank" rel="noopener">Google Vertex</a>
-        <a class="card" href="https://www.cohere.com/" target="_blank" rel="noopener">Cohere</a>
+        <a class="card" href="https://platform.openai.com/" target="_blank" rel="noopener" data-tilt>OpenAI · GPT</a>
+        <a class="card" href="https://anthropic.com/" target="_blank" rel="noopener" data-tilt>Anthropic · Claude</a>
+        <a class="card" href="https://ai.meta.com/" target="_blank" rel="noopener" data-tilt>Meta · Llama</a>
+        <a class="card" href="https://cloud.google.com/vertex-ai" target="_blank" rel="noopener" data-tilt>Google Vertex</a>
+        <a class="card" href="https://www.cohere.com/" target="_blank" rel="noopener" data-tilt>Cohere</a>
       </div>
     </section>
 
-    <section class="grid" data-category="Text-to-Image">
-      <h2>文生图（Text → Image）</h2>
-      <div class="cards" id="ttimage-cards">
-        <a class="card" href="https://stability.ai/" target="_blank" rel="noopener">Stability · SD</a>
-        <a class="card" href="https://www.midjourney.com/" target="_blank" rel="noopener">Midjourney</a>
-        <a class="card" href="https://runwayml.com/" target="_blank" rel="noopener">Runway</a>
-        <a class="card" href="https://openai.com/dall-e-2" target="_blank" rel="noopener">OpenAI · DALL·E</a>
+    <section class="grid reveal" data-category="Showcase">
+      <h2>画廊 · 示例媒体</h2>
+      <div class="gallery">
+        <figure class="media-card" tabindex="0">
+          <img data-src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1200&q=80" alt="示例图 1" class="lazy">
+          <figcaption>生成艺术 · 示例 1</figcaption>
+        </figure>
+        <figure class="media-card" tabindex="0">
+          <img data-src="https://images.unsplash.com/photo-1526378721035-3b70a60f5f2b?auto=format&fit=crop&w=1200&q=80" alt="示例图 2" class="lazy">
+          <figcaption>界面演示 · 示例 2</figcaption>
+        </figure>
+        <figure class="media-card" tabindex="0">
+          <img data-src="https://images.unsplash.com/photo-1507238691740-4f1b1b7a4f9a?auto=format&fit=crop&w=1200&q=80" alt="示例图 3" class="lazy">
+          <figcaption>多模态 · 示例 3</figcaption>
+        </figure>
       </div>
+      <p class="muted">点击图片查看大图。或点击“播放示例视频”观看短片。</p>
     </section>
 
-    <section class="grid" data-category="Speech">
-      <h2>语音 / TTS</h2>
-      <div class="cards" id="speech-cards">
-        <a class="card" href="https://elevenlabs.io/" target="_blank" rel="noopener">ElevenLabs</a>
-        <a class="card" href="https://www.descript.com/overdub" target="_blank" rel="noopener">Descript Overdub</a>
-        <a class="card" href="https://cloud.google.com/text-to-speech" target="_blank" rel="noopener">Google TTS</a>
-        <a class="card" href="https://www.resemble.ai/" target="_blank" rel="noopener">Resemble.ai</a>
-      </div>
-    </section>
-
-    <section class="grid" data-category="Video">
-      <h2>视频 / 多模态</h2>
-      <div class="cards" id="video-cards">
-        <a class="card" href="https://www.synthesia.io/" target="_blank" rel="noopener">Synthesia</a>
-        <a class="card" href="https://runwayml.com/" target="_blank" rel="noopener">Runway</a>
-        <a class="card" href="https://www.tii.ae/" target="_blank" rel="noopener">Imagen Video</a>
-      </div>
-    </section>
-
-    <section class="grid" data-category="Agents">
+    <section class="grid reveal" data-category="Agents">
       <h2>Agent / 平台</h2>
       <div class="cards" id="agent-cards">
-        <a class="card" href="https://github.com/features/copilot/" target="_blank" rel="noopener">GitHub Copilot</a>
-        <a class="card" href="https://platform.openai.com/docs/guides/gpt/function-calling" target="_blank" rel="noopener">Function-calling</a>
-        <a class="card" href="https://huggingface.co/spaces" target="_blank" rel="noopener">Hugging Face Spaces</a>
+        <a class="card" href="https://github.com/features/copilot/" target="_blank" rel="noopener" data-tilt>GitHub Copilot</a>
+        <a class="card" href="https://platform.openai.com/docs/guides/gpt/function-calling" target="_blank" rel="noopener" data-tilt>Function-calling</a>
+        <a class="card" href="https://huggingface.co/spaces" target="_blank" rel="noopener" data-tilt>Hugging Face Spaces</a>
       </div>
     </section>
 
@@ -76,6 +67,14 @@
       <p>说明：此站由 GitHub Pages 托管。要编辑，直接修改仓库并 push。更多自定义请参阅 README。</p>
     </footer>
   </main>
+
+  <!-- Image / Video Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-inner">
+      <button id="modalClose" class="modal-close" aria-label="关闭">✕</button>
+      <div id="modalContent" class="modal-content"></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
