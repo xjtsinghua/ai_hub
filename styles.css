@@ -40,11 +40,16 @@ body{
 /* Gallery */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .media-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:10px;overflow:hidden;cursor:pointer;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 30px rgba(2,6,23,0.45);transition:transform .18s ease,box-shadow .18s}
-.media-card img{width:100%;height:200px;object-fit:cover;display:block;transform-origin:center center;transition:transform .5s ease}
+.media-card img{width:100%;height:220px;object-fit:cover;display:block;transform-origin:center center;transition:transform .5s ease}
 .media-card:hover{transform:translateY(-8px) rotate(-0.4deg)}
 .media-card:hover img{transform:scale(1.06)}
 .media-card figcaption{padding:10px;color:var(--muted);font-size:13px}
 .muted{color:var(--muted);font-size:13px;margin-top:8px}
+
+/* Resources (domestic + academic) */
+#china-models .cards, #academic-resources .cards{display:flex;flex-wrap:wrap;gap:12px}
+#china-models .card, #academic-resources .card{min-width:160px;padding:12px 14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,0.03);box-shadow:0 8px 18px rgba(2,6,23,0.45)}
+#china-models .card:hover, #academic-resources .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(2,6,23,0.6)}
 
 /* Modal */
 .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,6,12,0.6);z-index:1200}
